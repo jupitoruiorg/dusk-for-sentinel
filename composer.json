@@ -5,7 +5,7 @@
     "type": "library",
     "require": {
         "php": ">=7.2",
-        "laravel/dusk": "^6.0",
+        "laravel/dusk": "^5.8",
         "cartalyst/sentinel": "^2.0",
         "illuminate/support": "^6.0",
         "illuminate/contracts": "^6.0"

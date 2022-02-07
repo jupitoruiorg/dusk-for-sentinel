@@ -44,7 +44,10 @@ class UserController
             $user = (new $model)->find($userId);
         }
 
-        $auth->login($user);
+        if ($user) {
+            $auth->login($user);
+        }
+
     }
 
     /**

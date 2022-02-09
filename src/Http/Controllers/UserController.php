@@ -46,7 +46,19 @@ class UserController
 
         if ($user) {
             $auth->login($user);
+
+            if (env('CI')) {
+                dd('Found', $user);
+            }
+
+        } else {
+            if (env('CI')) {
+                dd('Not found', $userId, (new $model), (new $model)->all()->pluck('email')->toArray());
+            }
         }
+
+
+
 
     }
 

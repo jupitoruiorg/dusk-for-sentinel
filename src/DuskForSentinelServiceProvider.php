@@ -25,9 +25,9 @@ class DuskForSentinelServiceProvider extends DuskServiceProvider
     {
         if (! $this->app->environment('production')) {
             Route::group(array_filter([
-                //'prefix' => config('dusk.path', '_dusk'),
+                'prefix' => config('dusk.path', '_dusk'),
                 //'domain' => config('dusk.domain', env('APP_DOMAIN', )),
-                'middleware' => 'web',
+                'middleware' => config('dusk.middleware', 'web'),
             ]), function () {
                 Route::get('/login/{userId}/{guard?}', [
                     'uses' => 'Rymanalu\DuskForSentinel\Http\Controllers\UserController@login',
